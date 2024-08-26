@@ -24,9 +24,14 @@
     googleSat.addTo(map);
 
     //for marking the latitude and longitude
-    if(userlatitude!=null)
-    L.marker([userlatitude,userlongitude]).addTo(map);
-    L.marker([destinationlatitude,destinationlongitude]).addTo(map);
+    const inputchecker=setInterval(()=>{
+    if(userlatitude!=null){
+    var usermarker=L.marker([userlatitude,userlongitude]).addTo(map);
+        clearInterval(inputchecker);
+    }
+    
+    },1000)
+    var destinationmarker=L.marker([destinationlatitude,destinationlongitude]).addTo(map);
 
 
 
