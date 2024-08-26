@@ -26,8 +26,13 @@
 
 
     //for markers coloring and whatever
-    var myIcon = L.icon({
+    var userIcon = L.icon({
         iconUrl: 'usermarker.png',
+        iconSize: [38, 50]
+        
+    });
+    var destinationIcon = L.icon({
+        iconUrl: 'destinationmarker.webp',
         iconSize: [38, 95]
         
     });
@@ -36,12 +41,12 @@
     //for marking the latitude and longitude
     const inputchecker=setInterval(()=>{
     if(userlatitude!=null){
-    var usermarker=L.marker([userlatitude,userlongitude], {icon: myIcon}).addTo(map);
+    var usermarker=L.marker([userlatitude,userlongitude], {icon: userIcon}).addTo(map);
         clearInterval(inputchecker);
     }
     
     },1000)
-    var destinationmarker=L.marker([destinationlatitude,destinationlongitude]).addTo(map);
+    var destinationmarker=L.marker([destinationlatitude,destinationlongitude],{icon:destinationIcon}).addTo(map);
 
 
 
