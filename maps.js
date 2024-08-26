@@ -2,7 +2,7 @@
     // setting latitude and longitude of place
     let destinationlatitude = 26.561236769422337
     let destinationlongitude = 88.08703710230431
-    let zoomlevel = 16
+    let zoomlevel = 10
 
     //map initialization
     var map = L.map('map').setView([destinationlatitude, destinationlongitude], zoomlevel);
