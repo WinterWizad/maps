@@ -4,8 +4,8 @@ const answer=document.querySelector(".answer")
 function success(position){
     answer.innerHTML=`{position}`;
 }
-function fail(){
-    console.log("Error")
+function fail(position){
+      answer.innerHTML=`{position}`;
 }
 button.addEventListener("click", async()=>{
     navigator.geolocation.getCurrentPosition(success,fail)
