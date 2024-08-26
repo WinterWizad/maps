@@ -22,37 +22,5 @@
     <h1>Getting locations</h1>
     <button id="button">GET</button>
     <div class="answer"></div>
-    <script src="maps.js"></script>
-</body>
-<script>
-    // setting latitude and longitude of place
-    let latitude = 26.561236769422337
-    let longitude = 88.08703710230431
-    let zoomlevel = 16
-
-    //map initialization
-    var map = L.map('map').setView([latitude, longitude], zoomlevel);
-
-
-    //for open street map tile layer
-    // var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    // })
-    //adding the osm to map variable
-    //osm.addTo(map);
-
-    //for google satellite tile 
-    //for street lyrs=m, satellite=s, terrain=p and hybrid=h
-    googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-    googleSat.addTo(map);
-
-    //for marking the latitude and longitude
-    L.marker([latitude,longitude,5]).addTo(map);
-
-
-</script>
-
-</html>
+    <script src="maps.js" defer></script>
+</body></html>

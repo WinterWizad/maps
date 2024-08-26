@@ -1,17 +1,32 @@
-const button = document.querySelector("#button");
-const answer = document.querySelector(".answer");
 
-function success(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    answer.innerHTML = `Latitude: ${latitude}, Longitude: ${longitude}`;
-}
+    // setting latitude and longitude of place
+    let destinationlatitude = 26.561236769422337
+    let destinationlongitude = 88.08703710230431
+    let zoomlevel = 16
 
-function fail(error) {
-    console.log(error);
-    answer.innerHTML = `Error: ${error.message}`;
-}
+    //map initialization
+    var map = L.map('map').setView([latitude, longitude], zoomlevel);
 
-button.addEventListener("click", async () => {
-    navigator.geolocation.getCurrentPosition(success, fail);
-});
+
+    //for open street map tile layer
+    // var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // })
+    //adding the osm to map variable
+    //osm.addTo(map);
+
+    //for google satellite tile 
+    //for street lyrs=m, satellite=s, terrain=p and hybrid=h
+    googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    googleSat.addTo(map);
+
+    //for marking the latitude and longitude
+    L.marker([userlatitude,userlongitude]).addTo(map);
+    L.marker([destinationlatitude,destinationlongitude]).addTo(map);
+
+
+
+
