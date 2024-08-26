@@ -23,10 +23,19 @@
     });
     googleSat.addTo(map);
 
+
+
+    //for markers coloring and whatever
+    var myIcon = L.icon({
+        iconUrl: 'usermarker.png',
+        iconSize: [38, 95]
+        
+    });
+    
     //for marking the latitude and longitude
     const inputchecker=setInterval(()=>{
     if(userlatitude!=null){
-    var usermarker=L.marker([userlatitude,userlongitude]).addTo(map);
+    var usermarker=L.marker([userlatitude,userlongitude], {icon: myIcon}).addTo(map);
         clearInterval(inputchecker);
     }
     
