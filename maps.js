@@ -24,6 +24,7 @@
     googleSat.addTo(map);
 
     //for marking the latitude and longitude
+    if(userlatitude!=null)
     L.marker([userlatitude,userlongitude]).addTo(map);
     L.marker([destinationlatitude,destinationlongitude]).addTo(map);
 
