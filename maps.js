@@ -5,7 +5,7 @@
     let zoomlevel = 16
 
     //map initialization
-    var map = L.map('map').setView([latitude, longitude], zoomlevel);
+    var map = L.map('map').setView([destinationlatitude, destinationlongitude], zoomlevel);
 
 
     //for open street map tile layer
