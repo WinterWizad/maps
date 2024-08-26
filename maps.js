@@ -31,7 +31,7 @@
         iconSize: [38, 95]
         
     });
-    myIcon.classList.add("animate")
+    
     
     //for marking the latitude and longitude
     const inputchecker=setInterval(()=>{
