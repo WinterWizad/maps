@@ -1,6 +1,10 @@
 
 function getRoute(){
-    var pointmarker=L.marker([userlatitude,userlongitude]).addTo(map)
+    var movingIcon=L.icon({
+        iconUrl: 'movingIcon.png',
+        iconSize: [38, 95],
+    });
+    var pointmarker=L.marker([userlatitude,userlongitude], {icon: movingIcon}).addTo(map)
    var route= L.Routing.control({
     waypoints: [
       L.latLng(userlatitude, userlongitude),
