@@ -1,7 +1,6 @@
 const button = document.querySelector("#button");
 const answer = document.querySelector(".answer");
-var userlatitude=38.7946;
-var userlongitude= 106.5348;
+var userlatitude, userlongitude;
 
 function success(position) {
     // console.log(position)
